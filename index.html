@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Drone Manufacturing as a Service (DMaaS) - Scalable drone solutions for government agencies and industrial companies. Tailored builds, compliance-first approach, and cost-smart solutions.">
+    <meta name="keywords" content="Drone Manufacturing as a Service, Industrial drone solutions, Government drone technology, Drone compliance and reliability">
+    <title>DMaaS - Drone Manufacturing as a Service</title>
+    <style>
+        :root {
+            /* Colors */
+            --color-bg: #FFFFFF;
+            --color-text: #0F172A;
+            --color-accent: #2563EB;
+            --color-gray: #64748B;
+            --color-divider: #E5E7EB;
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, 'Segoe UI', 'SF Pro Display', system-ui, sans-serif;
+            --font-size-base: 16px;
+            --font-size-h1: 2.5rem;
+            --font-size-h2: 2rem;
+            --font-size-h3: 1.5rem;
+            --line-height-base: 1.6;
+            --line-height-heading: 1.2;
+            
+            /* Spacing */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 40px;
+            --spacing-2xl: 64px;
+            
+            /* Layout */
+            --container-max-width: 1120px;
+            --container-padding: var(--spacing-md);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @media (prefers-reduced-motion: no-preference) {
+            * {
+                animation: fadeIn 0.6s ease-out;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        html {
+            font-size: var(--font-size-base);
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--color-bg);
+            border-bottom: 1px solid var(--color-divider);
+            padding: var(--spacing-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        .brand:hover {
+            color: var(--color-accent);
+        }
+        
+        .brand:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background-color: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #1D4ED8;
+            transform: translateY(-1px);
+        }
+        
+        .cta-button:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+        
+        /* Main Content */
+        main {
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-bottom: var(--spacing-2xl);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: var(--font-size-h1);
+            line-height: var(--line-height-heading);
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Sections */
+        section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        section:last-of-type {
+            margin-bottom: 0;
+        }
+        
+        h2 {
+            font-size: var(--font-size-h2);
+            line-height: var(--line-height-heading);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text);
+        }
+        
+        p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Why Choose Section - Two Column Layout */
+        .why-choose-section {
+            background-color: #F8FAFC;
+            padding: var(--spacing-xl);
+            border-radius: 12px;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .why-choose-section h2 {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .why-choose-section > p {
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-gray);
+        }
+        
+        .benefits-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+        
+        @media (min-width: 768px) {
+            .benefits-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .benefits-list li {
+            position: relative;
+            padding-left: var(--spacing-lg);
+            color: var(--color-text);
+            line-height: var(--line-height-base);
+        }
+        
+        .benefits-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .benefits-list li:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+        
+        .why-choose-section .benefits-list + p {
+            margin-top: var(--spacing-xl);
+        }
+        
+        /* Regular Lists */
+        ul:not(.benefits-list) {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul:not(.benefits-list) li {
+            position: relative;
+            padding-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text);
+        }
+        
+        ul:not(.benefits-list) li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-gray);
+            font-weight: 700;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #F8FAFC;
+            border-top: 1px solid var(--color-divider);
+            padding: var(--spacing-xl) 0;
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-content h2 {
+            font-size: var(--font-size-h3);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text);
+        }
+        
+        .footer-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+            list-style: none;
+        }
+        
+        .footer-keywords li {
+            padding: var(--spacing-xs) var(--spacing-md);
+            background-color: white;
+            border: 1px solid var(--color-divider);
+            border-radius: 20px;
+            color: var(--color-gray);
+            font-size: 0.9rem;
+            padding-left: var(--spacing-md);
+            position: relative;
+        }
+        
+        .footer-keywords li::before {
+            display: none;
+        }
+        
+        /* Links */
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        a:hover {
+            color: #1D4ED8;
+            text-decoration: underline;
+        }
+        
+        a:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        
+        /* Responsive Typography */
+        @media (max-width: 768px) {
+            :root {
+                --font-size-h1: 2rem;
+                --font-size-h2: 1.75rem;
+                --container-padding: var(--spacing-sm);
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .why-choose-section {
+                padding: var(--spacing-md);
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+                align-items: flex-start;
+            }
+            
+            main {
+                padding: var(--spacing-xl) 0;
+            }
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+        
+        /* Skip to main content link for screen readers */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-accent);
+            color: white;
+            padding: var(--spacing-sm);
+            text-decoration: none;
+            z-index: 1000;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="brand">DMaaS</a>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </header>
+    
+    <main id="main-content">
+        <div class="container">
+            <section class="hero">
+                <h1>Drone Manufacturing as a Service (DMaaS)</h1>
+                <p>DMaaS is a service that allows you to manufacture drones without having to invest in the hardware and software.</p>
+            </section>
+            
+            <section>
+                <h2>Transforming Operations with Scalable Drone Solutions</h2>
+                <p>Drone Manufacturing as a Service gives government agencies and industrial companies a straightforward way to access advanced drones without building them in‑house. Instead of investing heavily in production, you can focus on your mission while we handle design, assembly, and deployment.
+                    Whether it's monitoring infrastructure, supporting disaster response, or improving site safety, DMaaS ensures drones are built to fit the job. The goal is simple: reliable aerial systems that save time, reduce costs, and improve accuracy.
+                    </p>
+            </section>
+            
+            <section>
+                <h2>How Agencies and Industries Benefi</h2>
+                <p>Government teams often need quick, dependable tools for surveillance, border monitoring, or emergency relief. Drones provide real‑time data and reduce risks for personnel in the field.
+                For industrial and infrastructure companies, drones help with inspections, logistics, and construction monitoring. Instead of stretching budgets on manufacturing, DMaaS delivers tested and compliant drones ready for use.
+                In practice, this means faster decisions, safer operations, and measurable savings across projects.
+                </p>
+            </section>
+            
+            <section class="why-choose-section">
+                <h2>Why Choose DMaaS?</h2>
+                <p>Organizations trust our DMaaS because we focus on practical value:</p>
+                <ul class="benefits-list">
+                    <li>Tailored builds: Drones are designed for specific tasks, not one‑size‑fits‑all models.</li>
+                    <li>Compliance first: Every unit meets industry and government standards, ensuring safety and reliability.</li>
+                    <li>Cost‑smart approach: Outsourcing avoids heavy upfront costs and lowers maintenance expenses.</li>
+                    <li>Experienced team: Our engineers combine technical skill with field knowledge, so drones perform where it matters.</li>
+                    <li>Clear process: We keep communication transparent from design to delivery, building trust step by step.</li>
+                </ul>
+                <p>This mix of customization, compliance, and efficiency makes DMaaS a dependable choice for agencies and enterprises alike.</p>
+            </section>
+            
+            <section>
+                <h2>Looking Ahead with Smarter Drones</h2>
+                <p>Drone technology is moving fast. Through DMaaS, we integrate features like automated flight planning, secure data transfer, and AI‑driven analytics.
+                    For government agencies, this means sharper situational awareness and quicker emergency response. For industries, it means predictive maintenance, reduced downtime, and smoother workflows.
+                    Partnering with us is not just about getting drones—it's about gaining a pathway to smarter, safer, and more efficient operations.
+                </p>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>SEO Keywords</h2>
+                <ul class="footer-keywords">
+                    <li>Drone Manufacturing as a Service</li>
+                    <li>Industrial drone solutions</li>
+                    <li>Government drone technology</li>
+                    <li>Drone compliance and reliability</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
